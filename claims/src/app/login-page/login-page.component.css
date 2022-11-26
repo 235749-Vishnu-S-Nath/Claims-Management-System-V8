@@ -1,0 +1,44 @@
+.container-fluid{
+    background-color: #6767E0;
+    height: 100vh;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 70vh;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.username{
+    margin-bottom: 10px;
+}
+.submitButton{
+    margin-top: 10%;
+}
+
+/* ........................................... */
+
+  .btn.btn-primary.btn-sm{
+    background: #6767E0;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1px;
+    border: 3px solid #6767E0;
+    transition: ease all .3s;
+  }
+  
+  .btn.btn-primary.btn-sm:hover{
+    width: 110px;
+    border: 3px solid #6767E0;
+    background: transparent;
+    color: #6767E0;
+  }
+
+/* .............................................. */
+.password{
+    margin-top: 10px;
+}
