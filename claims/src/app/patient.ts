@@ -5,5 +5,6 @@ export class Patient {
     patientGender: string;
     patientContactNumber: number;
     modifiedDate: string
-    patientProfileLink:string;
+    patientAddress:string;
+    patientPictureUrl:string;
 }

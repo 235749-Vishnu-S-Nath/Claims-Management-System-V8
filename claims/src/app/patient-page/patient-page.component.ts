@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Hospital } from '../hospital';
+import { HospitalService } from '../hospital.service';
 import { Patient } from '../patient';
 import { PatientServiceService } from '../patient-service.service';
+import { Policy } from '../policy';
+import { PolicyService } from '../policy.service';
 
 @Component({
   selector: 'app-patient-page',
@@ -9,13 +13,24 @@ import { PatientServiceService } from '../patient-service.service';
 })
 export class PatientPageComponent implements OnInit {
 
-  constructor(private patientService:PatientServiceService){
+  constructor(private patientService:PatientServiceService,private hospitalService:HospitalService,private policyService:PolicyService){
   }
-  patient: Patient[];
+  patient: Patient;
+  hospital: Hospital[];
+  policies: Policy[];
   ngOnInit() {
-    console.log("hi");
-    this.patientService.findAll().subscribe(
-      data => {this.patient=data;}
+
+    this.patientService.find(1).subscribe(
+      data=>{this.patient=data;}
+    )
+
+    this.hospitalService.findAll().subscribe(
+      data => {this.hospital=data;}
+    );
+
+    this.policyService.findAll().subscribe(
+      data => {this.policies=data;}
     );
   }
 }
+

@@ -8,12 +8,14 @@ import { PatientPageComponent } from './patient-page/patient-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PatientServiceService } from './patient-service.service';
+import { TreatmentPageComponent } from './treatment-page/treatment-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    PatientPageComponent
+    PatientPageComponent,
+    TreatmentPageComponent
   ],
   imports: [
     BrowserModule,

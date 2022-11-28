@@ -8,12 +8,18 @@ import { Patient } from './patient';
 })
 export class PatientServiceService {
   private userUrl:string;
+  private patientByIdUrl:string;
 
   constructor(private http: HttpClient) {
     this.userUrl="http://localhost:8080/patients";
+    this.patientByIdUrl="http://localhost:8080/patient/";
    }
-
+   
    public findAll(): Observable<Patient[]>{
       return this.http.get<Patient[]>(this.userUrl);
+   }
+
+   public find(id:number):Observable<Patient>{
+    return this.http.get<Patient>(this.patientByIdUrl+id);
    }
 }

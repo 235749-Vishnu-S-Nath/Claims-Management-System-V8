@@ -1,20 +1,68 @@
-<div class="card my-5">
+<!-- <div class="card my-5">
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">PatientAge</th>
           <th scope="col">Name</th>
           <th scope="col">Link</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let pat of patient">
-          <td>{{ pat.patientId}}</td>
+          <td>{{ pat.patientAge}}</td>
           <td>{{ pat.patientName }}</td>
           <td> <a href="{{ pat.patientProfileLink }}"> click</a></td>
         </tr>
       </tbody>
     </table>
+  </div>
+</div> -->
+
+<div class="container-fluid">
+  <div class="card shadow">
+    <div class="row g-0">
+      <div class="col-sm-6 col-md-8">
+        <div class="left-div">
+          <div class="welcome">
+            <h1>Welcome</h1>
+          </div>
+          <div class="profile-picture">
+            <img src="{{patient.patientPictureUrl}}" class="img-thumbnail" alt="https://www.bing.com/th?id=OIP._BXCcqxwmsduYNCJj2XDtgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2">
+          </div>
+          <div class="details">
+            <p class="fw-bold">Name: </p><p class="fw-light">{{patient.patientName}}</p>
+            <p class="fw-bold">Address: </p><p class="fw-light">{{patient.patientAddress}}</p>
+            <p class="fw-bold">Age: </p><p class="fw-light">{{patient.patientAge}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="right-div">
+          <div class="select-hospital">
+            <div class="select-hospital-title">
+              <h3>Select Hospital</h3>
+            </div>
+            <div class="form-check" *ngFor="let h of hospital">
+              <input class="form-check-input" type="radio" name="flexRadioDefault-Hospital" id="{{h.hospitalName}}">
+              <label class="form-check-label" for="{{h.hospitalName}}">
+                {{h.hospitalName}}
+              </label>
+            </div>
+          </div>
+          <div class="select-policy">
+            <div class="select-policy-title">
+              <h3>Select Policies</h3>
+            </div>
+            <div class="form-check" *ngFor="let p of policies">
+              <input class="form-check-input" type="radio" name="flexRadioDefault-Policy" id="{{p.policyName}}">
+              <label class="form-check-label" for="{{p.policyName}}">
+                {{p.policyName}}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
