@@ -13,12 +13,7 @@ export class ClaimsService {
   }
 
   public save(claims:Claims) {
-    console.log(claims.patientId);
-    console.log(claims.hospitalId);
-    console.log(claims.policyId);
-    console.log(claims.treatmentId);
-    console.log(claims.specialistId);
-    console.log(claims.capableAmount);
+    console.log(claims);
     return this.http.post<Claims>(this.userUrl, claims);
   }
 }

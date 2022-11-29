@@ -1,5 +1,5 @@
 export class Specialist {
-    specialistID:number;
+    specialistId:number;
     specialistName:string;
     qualification:string;
     specialistContactNumber:number;
