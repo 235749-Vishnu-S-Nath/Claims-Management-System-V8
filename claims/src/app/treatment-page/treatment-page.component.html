@@ -1,10 +1,10 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="card shadow">
         <div class="row g-0">
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-8">
               <div class="treatment-div">
                 <div class="form-check" *ngFor="let t of treatments">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault-treatment" #tradio1 id="{{t.treatmentId}}" (change)="Change($event, tradio1)">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault-treatment" #radio1 id="{{t.treatmentId}}" (change)="change1($event, radio1)">
                     <label class="form-check-label" for="{{t.treatmentId}}">
                       {{t.treatmentName}}
                     </label>
@@ -15,14 +15,52 @@
             <div class="col-6 col-md-4">
               <div class="sprecialist-div">
                 <div class="form-check" *ngFor="let s of specialists">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault-specialist" id="{{s.specialistId}}">
-                  <label class="form-check-label" for="{{s.specialistId}}">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault-specialist" #radio2 id="{{s.specialistID}}" (change)="change2($event, radio2)">
+                  <label class="form-check-label" for="{{s.specialistID}}">
                     {{s.specialistName}}
                   </label>
                 </div>
               </div>
             </div>
         </div>
-        <button >Submit</button>
+        <button (click)="save()">Submit</button>
     </div>
+</div> -->
+
+<div class="container-fluid">
+  <div class="d-flex aligns-items-center justify-content-center card text-center w-75 mx-auto">
+   
+      <div class="card-header">
+        Choose your treatment
+      </div>
+      <div class="row g-0">
+      <div class="col-sm-6">
+      <div class="card-body">
+        <h2>  TREATMENT</h2><br>
+        <div class="form-check" *ngFor="let t of treatments">
+          <input class="form-check-input" type="radio" name="flexRadioDefault-treatment" #radio1 id="{{t.treatmentId}}" (change)="change1($event, radio1)">
+          <label class="form-check-label" for="{{t.treatmentId}}">
+            {{t.treatmentName}}
+          </label>
+      </div>
+       <br><br>
+         
+      </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card-body">
+          <h2>  SPECIALIST</h2><br>
+          <div class="form-check" *ngFor="let s of specialists">
+            <input class="form-check-input" type="radio" name="flexRadioDefault-specialist" #radio2 id="{{s.specialistID}}" (change)="change2($event, radio2)">
+            <label class="form-check-label" for="{{s.specialistID}}">
+              {{s.specialistName}}
+            </label>
+          </div>
+       <br><br>
+          </div>
+        </div>
+        <button type="button" class="btn btn-light" (click)="save()">OK</button>
+      </div>
+    </div>
+       
 </div>

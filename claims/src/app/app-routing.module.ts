@@ -7,7 +7,8 @@ import { TreatmentPageComponent } from './treatment-page/treatment-page.componen
 const routes: Routes = [
   {path:"login-page", component:LoginPageComponent},
   {path:"patient-page",component:PatientPageComponent},
-  {path:"treatment-page",component:TreatmentPageComponent}
+  {path:"treatment-page",component:TreatmentPageComponent},
+  { path: '', redirectTo: '/login-page', pathMatch: 'full' }
 ];
 
 @NgModule({

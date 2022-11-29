@@ -1,0 +1,7 @@
+.container-fluid{
+    height:100vh;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    background-color: #6767E0;
+}

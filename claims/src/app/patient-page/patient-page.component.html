@@ -1,24 +1,4 @@
-<!-- <div class="card my-5">
-  <div class="card-body">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">PatientAge</th>
-          <th scope="col">Name</th>
-          <th scope="col">Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let pat of patient">
-          <td>{{ pat.patientAge}}</td>
-          <td>{{ pat.patientName }}</td>
-          <td> <a href="{{ pat.patientProfileLink }}"> click</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div> -->
-
+<!--
 <div class="container-fluid">
   <div class="card shadow">
     <div class="row g-0">
@@ -44,7 +24,7 @@
               <h3>Select Hospital</h3>
             </div>
             <div class="form-check" *ngFor="let h of hospital">
-              <input class="form-check-input" type="radio" name="flexRadioDefault-Hospital" id="{{h.hospitalName}}">
+              <input class="form-check-input" type="radio" name="flexRadioDefault-Hospital" #radio1 id="{{h.hospitalId}}" (change)="change1($event,radio1)">
               <label class="form-check-label" for="{{h.hospitalName}}">
                 {{h.hospitalName}}
               </label>
@@ -55,7 +35,7 @@
               <h3>Select Policies</h3>
             </div>
             <div class="form-check" *ngFor="let p of policies">
-              <input class="form-check-input" type="radio" name="flexRadioDefault-Policy" id="{{p.policyName}}">
+              <input class="form-check-input" type="radio" name="flexRadioDefault-Policy" #radio2 id="{{p.policyId}}" (change)="change2($event,radio2)">
               <label class="form-check-label" for="{{p.policyName}}">
                 {{p.policyName}}
               </label>
@@ -64,5 +44,106 @@
         </div>
       </div>
     </div>
+    <button (click)="rerout()" routerLink="/treatment-page">Next</button>
   </div>
+</div> -->
+
+<div class="container-fluid" id="main">
+
+  <div class="card shadow" id="main2">
+
+    <div class="row g-0">
+
+      <div class="col-sm-6 col-md-8">
+
+        <div class="left-div">
+
+          <div class="welcome" id="welcome">
+
+            <h1 style="display: inline-block;font-family: Georgia, 'Times New Roman', Times, serif;">Welcome&nbsp;</h1>
+            <h1> </h1>
+           
+            <h1 style="display: inline-block;font-family: Georgia, 'Times New Roman', Times, serif;">{{patient.patientName}}</h1>
+
+          </div>
+
+          <div class="profile-picture">
+
+            <img src="{{patient.patientPictureUrl}}" class="rounded-circle" alt="image">
+
+          </div>
+
+         
+          <div class="row g-0">
+
+            <div class="col-sm-6 ">
+
+              <p class="fw-bold">Address: </p><p class="fw-light">{{patient.patientAddress}}</p>
+            </div>
+
+            <div class="col-sm-6 " >
+
+              <p class="fw-bold" >Age </p><p class="fw-light">{{patient.patientAge}}</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-6 col-md-4">
+
+        <div class="right-div">
+
+          <div class="select-hospital">
+
+            <div class="select-hospital-title">
+
+              <h3>Select Hospital</h3>
+
+            </div>
+
+            <div class="form-check" *ngFor="let h of hospital">
+
+              <input class="form-check-input" type="radio" name="flexRadioDefault-Hospital" #radio1 id="{{h.hospitalId}}" (change)="change1($event,radio1)">
+
+              <label class="form-check-label" for="{{h.hospitalId}}">
+
+                {{h.hospitalName}}
+
+              </label>
+
+            </div>
+
+          </div>
+          <br>
+          <div class="select-policy">
+
+            <div class="select-policy-title">
+
+              <h3>Select Policy</h3>
+
+            </div>
+           
+            <div class="form-check" *ngFor="let p of policies">
+
+              <input class="form-check-input" type="radio" name="flexRadioDefault-Policy" #radio2 id="{{p.policyId}}" (change)="change2($event,radio2)">
+
+              <label class="form-check-label" for="{{p.policyId}}">
+
+                {{p.policyName}}
+
+              </label>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      <button (click)="rerout()" routerLink="/treatment-page" style="width: 200px; margin: 20px; margin-left: 50vh;">Next</button>
+    </div>
+    
+  </div>
+
 </div>

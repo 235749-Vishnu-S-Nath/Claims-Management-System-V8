@@ -1,5 +1,4 @@
 {
-  
   "name": "claims",
   "version": "0.0.0",
   "scripts": {
@@ -20,6 +19,7 @@
     "@angular/platform-browser": "^8.2.14",
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^13.1.1",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
     "rxjs": "~6.4.0",
