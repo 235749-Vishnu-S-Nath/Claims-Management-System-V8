@@ -54,17 +54,12 @@ export class PatientPageComponent implements OnInit {
 
   change2(event,id){
     this.claims.policyId=event.target.id;
+    this.claimsService.setPolicyId(event.target.id);
   }
   rerout(){
 
     this.patientId=this.patientService.getPatientId();
-    // this.display.patientName=this.patient.patientName;
-    // this.display.policyName=this.policies[this.claims.policyId-1].policyName;
-    // this.display.preAmount=this.policies[this.claims.policyId-1].policyPremiumAmount;
-    // this.claimsService.setDisplay(this.display);
-
     this.claims.patientId=this.patient.patientId;
-    console.log(this.claims.patientId);
     this.treatmentService.convert(this.claims);
   }
 }

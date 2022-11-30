@@ -9,6 +9,7 @@ import { PatientServiceService } from './patient-service.service';
 import { TreatmentPageComponent } from './treatment-page/treatment-page.component';
 import { NgModule } from '@angular/core';
 import { ClaimsComponent } from './claims/claims.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ClaimsComponent } from './claims/claims.component';
     LoginPageComponent,
     PatientPageComponent,
     TreatmentPageComponent,
-    ClaimsComponent
+    ClaimsComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

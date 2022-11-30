@@ -31,3 +31,8 @@
     justify-content: center;
     align-items: center;
 }
+.premiumAmount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

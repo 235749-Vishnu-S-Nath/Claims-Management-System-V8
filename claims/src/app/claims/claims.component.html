@@ -1,36 +1,117 @@
 <div class="container-fluid">
     <div class="card shadow">
         <div class="row">
-            <div class="col-6">
-                <div class="left">
-                    <h3>Name:&nbsp;{{name}}</h3>
-                </div>
+            <div class="premiumAmount">
+                <h3>Premimum-Amount:&nbsp;</h3>{{policyId}}
             </div>
-            <div class="col-6">
-                <div class="right">
-                    <h3>Policy:&nbsp;{{policy}}</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <div class="left">
-                    <h3>PremiumAmount:&nbsp;{{pAmount}}</h3>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="right">
-                    <h3>Treatment:&nbsp;{{treatment}}</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="inputAmount">
-                <h3>Enter Amount:&nbsp;</h3><input type="text">
+                <h3>Enter Cap-Amount:&nbsp;</h3><input type="number" id="item-input" #newItem>
             </div>
             <div class="submit">
-                <button (click)="submit()">Submit</button>
+                <button class="btn btn-primary" (click)="submit(newItem.value)">Submit</button>
             </div>
         </div>
     </div>
-</div>
+</div> 
+
+<!-- 
+<script type="javascript">
+    var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+</script>
+
+  <main class="container " >
+    <div class="card shadow w-75" style="width:12000px;">
+    <div class="cardbody">
+        hi
+    </div>
+    </div>
+   </main> -->
+   <!-- <section id="Claims" class="container-fluid ">
+      <div class="container">
+       
+        <div class="section-title">
+            <div class="d-flex aligns-items-center justify-content-center card text-center w-75 mx-auto" style="width:400px">
+            <div class="card-body">
+                <h2>Claims</h2>
+                <p></p>
+              </div>
+     
+              <form action=" " method="post" role="form" class="php-email-form">
+                <div class="row">
+                  <div class="col-md-4 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                  Patient Name : <strong>{{claims[0].patientId}}.</strong> <div class="validate"></div>
+                  </div>
+                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" name="email" id="email" placeholder=" Cap Amount " data-rule="email" data-msg="Please enter a valid email">
+                   Treatment Name : <strong> Abcd</strong> <div class="validate"></div>
+                  </div>
+                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                   <input type="tel" class="form-control" name="phone" id="phone" placeholder=" Priemum Amount" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                   Policy Name : <strong>Abcd </strong> <div class="validate"></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 form-group mt-3">
+                   <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">-
+                   Premium Amount : <strong>500000</strong>
+                  </div>
+                  <div class="col-md-4 form-group mt-3">
+                    <select name="Treatment" id="Treatment" class="form-select">
+                      <option value="">Select Treatment </option>
+                      <option value="Treatment 1">cataract</option>
+                      <option value="Treatment 2">dialysis</option>
+                      <option value="Treatment 3">Transplant</option>
+                    </select>-
+                    <input type="text" class="form-control" name="capamount" id="email" placeholder=" Cap Amount " >
+                   
+                  </div>
+                  <div class="col-md-4 form-group mt-3">
+                    <input type="date" name="begin" class="form-control datepicker" placeholder=" " value="" min="1997-01-01" max="2030-12-31">
+                   
+                  </div>
+                </div>
+     
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" rows="5" placeholder="Comments"></textarea>
+                  <div class="validate"></div>
+                </div>
+                <div class="mb-3">
+                  <div class="loading"></div>
+                  <div class="error-message"></div>
+                  <div class="sent-message"></div>
+                </div>
+                <div class="text-center"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Claim</button></div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                         
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </form>
+             
+             
+             
+            </div>
+          </div>
+         
+
+      </div>
+    </section> -->

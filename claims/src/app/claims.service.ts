@@ -11,30 +11,33 @@ export class ClaimsService {
 
 
   private userUrl:string;
-  // id:number;
-  // claims:Claims;
-  // display:Display;
+  private updateUrl:string;
+  policyId:number;
+  postId;
 
   constructor(private http: HttpClient) { 
     this.userUrl="http://localhost:8080/claims";
+    this.updateUrl="http://localhost:8080/claim";
   }
+
+  public findAll(): Observable<Claims[]>{
+    return this.http.get<Claims[]>(this.userUrl);
+ }
 
   public save(claims:Claims) {
     return this.http.post<Claims>(this.userUrl, claims);
   }
 
-//   public findAll(): Observable<Claims[]>{
-//     return this.http.get<Claims[]>(this.userUrl);
-//  }
+  public update(body:Claims){
+    return this.http.put<Claims>(this.updateUrl, body).subscribe(data => this.postId = data.claimsId);
 
-//   public getDisplay(){
-//     return this.display;
-//   }
+  }
 
-//  public setDisplay(display:Display){
-//   this.display.patientName=display.patientName;
-//   this.display.policyName=display.policyName;
-//   this.display.preAmount=display.preAmount;
-//  }
+  public getPolicyId(){
+    return this.policyId;
+  }
 
+  public setPolicyId(id:number){
+    this.policyId=id;
+  }
 }

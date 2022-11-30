@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Claims } from '../claims';
 import { ClaimsService } from '../claims.service';
 import { Display } from '../display';
+import { Policy } from '../policy';
+import { PolicyService } from '../policy.service';
 import { TreatmentService } from '../treatment.service';
 
 @Component({
@@ -12,23 +15,36 @@ import { TreatmentService } from '../treatment.service';
 export class ClaimsComponent implements OnInit {
 
   constructor(private claimsService:ClaimsService,
-    private treatmentService:TreatmentService) { }
+  private policyService:PolicyService,
+  private router: Router) { }
+  
+  policy:Policy[];
   claims:Claims[];
-  name:string;
-  policy:string;
-  pAmount:number;
-  treatment:string;
+  updateClaims:Claims;
+  policyId:number;
+  amount:number;
 
   ngOnInit() {
-    // this.claimsService.findAll().subscribe(
-    //   data => {this.claims = data;}
-    // );
+    this.policyService.findAll().subscribe(
+      data => {this.policyId=data[this.claimsService.getPolicyId()-1].policyPremiumAmount;},
+    );
+    this.claimsService.findAll().subscribe(
+      data => {this.claims=data;}
+    );
   }
-  submit(){
-    // this.name=this.claimsService.getDisplay().patientName;
-    // this.policy=this.claimsService.getDisplay().policyName;
-    // this.pAmount=this.claimsService.getDisplay().preAmount;
+  inputText(event,amount){
+    this.amount=event.target.amount;
+  }
 
-    // console.log(this.name+" "+this.policy);
+  gotoUserList() {
+    this.router.navigate(['/claims']);
+  }
+  
+  submit(amount){
+    this.updateClaims=this.claims[this.claimsService.getPolicyId()-1];
+    this.updateClaims.capableAmount=amount;
+    this.claimsService.update(this.updateClaims);
+
+    this.router.navigate(["/success"])
   }
 }

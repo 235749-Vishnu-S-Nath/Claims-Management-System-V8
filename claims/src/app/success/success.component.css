@@ -1,0 +1,23 @@
+.container-fluid{
+    background-color: #6767E0;
+    height: 100vh;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 70vh;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+text-shadow: #3f3f88  0px 0px 5px, #3f3f88  0px 0px 10px, rgb(255, 255, 255) 0px 0px 15px, #6767E0 0px 0px 20px, #6767E0  0px 0px 30px,#6767E0  0px 0px 40px, #6767E0  0px 0px 50px, #6767E0  0px 0px 75px;
+--darkreader-inline-color:#3f3f88 ;
+--darkreader-inline-bgimage: initial;
+--darkreader-inline-bgcolor:#6767E0;
+}
