@@ -9,6 +9,7 @@ import { Patient } from './patient';
 export class PatientServiceService {
   private userUrl:string;
   private patientByIdUrl:string;
+  private patientId:number;
 
   constructor(private http: HttpClient) {
     this.userUrl="http://localhost:8080/patients";
@@ -21,5 +22,13 @@ export class PatientServiceService {
 
    public find(id:number):Observable<Patient>{
     return this.http.get<Patient>(this.patientByIdUrl+id);
+   }
+
+   public getPatientId(){
+    return this.patientId;
+   }
+
+   public initPatient(id){
+    this.patientId=id;
    }
 }

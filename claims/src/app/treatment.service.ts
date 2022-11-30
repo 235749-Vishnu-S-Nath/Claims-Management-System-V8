@@ -3,19 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Treatment } from './treatment';
 import { Claims } from './claims';
+import { Display } from './display';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TreatmentService {
   private userUrl:string;
-  private claimsUrl:string;
   private hospitalId:number;
   private policyId:number;
   private patientId:number;
+  display:Display;
   constructor(private http: HttpClient) { 
     this.userUrl="http://localhost:8080/treatments";
-    this.claimsUrl="http://localhost:8080/claims"
   }
 
   public findAll(): Observable<Treatment[]>{

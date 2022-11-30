@@ -1,0 +1,33 @@
+.container-fluid{
+    display: flex;
+    height: 100vh;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #6767E0;
+}
+.card{
+    padding: 20px;
+    width: 100vh;
+}
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputAmount{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -49,7 +49,7 @@ export class TreatmentPageComponent implements OnInit {
   }
 
   gotoUserList() {
-    this.router.navigate(['/login-page']);
+    this.router.navigate(['/claims']);
   }
    
   save(){

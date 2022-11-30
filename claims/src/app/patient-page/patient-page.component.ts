@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Claims } from '../claims';
 import { ClaimsService } from '../claims.service';
+import { Display } from '../display';
 import { Hospital } from '../hospital';
 import { HospitalService } from '../hospital.service';
 import { Patient } from '../patient';
@@ -21,16 +22,20 @@ export class PatientPageComponent implements OnInit {
   constructor(private patientService:PatientServiceService,
     private hospitalService:HospitalService,
     private policyService:PolicyService,
-    private treatmentService:TreatmentService){}
+    private treatmentService:TreatmentService,
+    private claimsService:ClaimsService){}
 
   patient: Patient;
+  patientId:number;
   hospital: Hospital[];
   policies: Policy[];
+  policy:Policy;
   claims:Claims=new Claims();
+  display:Display;
 
   ngOnInit() {
-
-    this.patientService.find(1).subscribe(
+    
+    this.patientService.find(this.patientService.getPatientId()).subscribe(
       data=>{this.patient=data;}
     )
 
@@ -51,6 +56,13 @@ export class PatientPageComponent implements OnInit {
     this.claims.policyId=event.target.id;
   }
   rerout(){
+
+    this.patientId=this.patientService.getPatientId();
+    // this.display.patientName=this.patient.patientName;
+    // this.display.policyName=this.policies[this.claims.policyId-1].policyName;
+    // this.display.preAmount=this.policies[this.claims.policyId-1].policyPremiumAmount;
+    // this.claimsService.setDisplay(this.display);
+
     this.claims.patientId=this.patient.patientId;
     console.log(this.claims.patientId);
     this.treatmentService.convert(this.claims);

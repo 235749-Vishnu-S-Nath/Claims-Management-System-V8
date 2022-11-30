@@ -2,16 +2,16 @@
     <div class="card shadow">
         <div class="username">
             <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                <input [(ngModel)]="localUsername" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
         </div>
         <div class="password">
             <div class="input-group flex-nowrap">
-            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+            <input [(ngModel)]="localPassword" type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
             </div>
         </div>
         <div class="submitButton">
-            <button type="button" class="btn btn-primary btn-sm" routerLink="/patient-page">Submit</button>
+            <button type="button" class="btn btn-primary btn-sm" (click)="validate()">Submit</button>
         </div>
    </div>
 </div> 
