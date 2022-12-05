@@ -10,7 +10,7 @@ export class ClaimsSaveService {
   private userUrl:string;
   private claimsSave:ClaimsSave = new ClaimsSave();
   constructor(private http: HttpClient) { 
-    this.userUrl="http://localhost:8080/claims";
+    this.userUrl="http://Claimsmanagementsystem-env.eba-fup8rg9v.us-east-2.elasticbeanstalk.com/claims";
   }
 
   public save(claims:Claims) {

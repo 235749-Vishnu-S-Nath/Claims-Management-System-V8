@@ -16,8 +16,8 @@ export class ClaimsService {
   postId;
 
   constructor(private http: HttpClient) { 
-    this.userUrl="http://localhost:8080/claims";
-    this.updateUrl="http://localhost:8080/claim";
+    this.userUrl="http://Claimsmanagementsystem-env.eba-fup8rg9v.us-east-2.elasticbeanstalk.com/claims";
+    this.updateUrl="http://Claimsmanagementsystem-env.eba-fup8rg9v.us-east-2.elasticbeanstalk.com/claim";
   }
 
   public findAll(): Observable<Claims[]>{

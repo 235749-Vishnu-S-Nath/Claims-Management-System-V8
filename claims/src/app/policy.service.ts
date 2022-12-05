@@ -9,7 +9,7 @@ import { Policy } from './policy';
 export class PolicyService {
   private userUrl:string;
   constructor(private http: HttpClient) { 
-    this.userUrl="http://localhost:8080/policies";
+    this.userUrl="http://Claimsmanagementsystem-env.eba-fup8rg9v.us-east-2.elasticbeanstalk.com/policies";
   }
 
   public findAll(): Observable<Policy[]>{

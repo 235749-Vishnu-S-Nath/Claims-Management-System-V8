@@ -15,7 +15,7 @@ export class TreatmentService {
   private patientId:number;
   display:Display;
   constructor(private http: HttpClient) { 
-    this.userUrl="http://localhost:8080/treatments";
+    this.userUrl="http://Claimsmanagementsystem-env.eba-fup8rg9v.us-east-2.elasticbeanstalk.com/treatments";
   }
 
   public findAll(): Observable<Treatment[]>{

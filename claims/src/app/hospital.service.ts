@@ -8,7 +8,7 @@ import { Hospital } from './hospital';
 export class HospitalService {
   private userUrl:string;
   constructor(private http: HttpClient) { 
-    this.userUrl="http://localhost:8080/hospital";
+    this.userUrl="http://Claimsmanagementsystem-env.eba-fup8rg9v.us-east-2.elasticbeanstalk.com/hospital";
   }
 
   public findAll(): Observable<Hospital[]>{

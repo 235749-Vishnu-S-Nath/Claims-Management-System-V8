@@ -12,7 +12,7 @@ export class UserService {
   userUrl:string;
 
   constructor(private http: HttpClient) { 
-    this.userUrl="http://localhost:8080/users";
+    this.userUrl="http://Claimsmanagementsystem-env.eba-fup8rg9v.us-east-2.elasticbeanstalk.com/users";
   }
 
   public findAll(): Observable<UserLogin[]>{

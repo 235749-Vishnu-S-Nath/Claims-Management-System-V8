@@ -10,7 +10,7 @@ import { TreatmentService } from './treatment.service';
 export class SpecialistService {
   private userUrl:string;
   constructor(private http: HttpClient,private treatmentService:TreatmentService) { 
-    this.userUrl="http://localhost:8080/specialists";
+    this.userUrl="http://Claimsmanagementsystem-env.eba-fup8rg9v.us-east-2.elasticbeanstalk.com/specialists";
   }
 
   public findAllById(id:number): Observable<Specialist[]>{
